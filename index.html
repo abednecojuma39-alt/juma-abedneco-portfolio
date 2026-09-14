@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Juma Abedneco | Computer Science Student &amp; Aspiring Software Developer</title>
+  <meta name="description" content="Computer Science student at The Kitale National Polytechnic passionate about software development, web development, databases, networking and technology.">
+  <meta name="author" content="Juma Abedneco">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (how this page looks when shared on WhatsApp, LinkedIn, etc.)
+       og:url and og:image use relative/placeholder paths for now — once this
+       site is deployed, update og:url to the live address below. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Juma Abedneco | Computer Science Student &amp; Aspiring Software Developer">
+  <meta property="og:description" content="Computer Science student at The Kitale National Polytechnic passionate about software development, web development, databases, networking and technology.">
+  <meta property="og:image" content="assets/images/icon-512.png">
+  <!-- <meta property="og:url" content="https://[YOUR-GITHUB-USERNAME].github.io/juma-abedneco-portfolio/"> -->
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts: Space Grotesk (headings), Inter (body), JetBrains Mono (code-style labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       ICON SPRITE
+       All repeated icons are defined once here and reused via
+       <use href="#icon-name">. This avoids duplicating the same
+       SVG path data across About, Skills, Projects, Certificates
+       and Contact. The sprite itself is invisible — only <use>
+       copies of it render.
+  ============================================= -->
+  <svg style="position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true">
+    <defs>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <polyline points="8 6 3 12 8 18"></polyline>
+        <polyline points="16 6 21 12 16 18"></polyline>
+      </symbol>
+      <symbol id="icon-browser" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="14" rx="1.5"></rect>
+        <line x1="3" y1="9" x2="21" y2="9"></line>
+        <circle cx="6" cy="6.5" r="0.6" fill="currentColor" stroke="none"></circle>
+      </symbol>
+      <symbol id="icon-database" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5.5" rx="7" ry="2.5"></ellipse>
+        <path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path>
+        <path d="M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path>
+      </symbol>
+      <symbol id="icon-network" viewBox="0 0 24 24">
+        <circle cx="5" cy="6" r="2.2"></circle>
+        <circle cx="19" cy="6" r="2.2"></circle>
+        <circle cx="12" cy="18" r="2.2"></circle>
+        <path d="M6.7 7.8 10.5 16"></path>
+        <path d="M17.3 7.8 13.5 16"></path>
+        <path d="M7 6h10"></path>
+      </symbol>
+      <symbol id="icon-tool" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a3 3 0 1 0-4.24 4.24L4 17v3h3l6.46-6.46a3 3 0 1 0 4.24-4.24z"></path>
+        <path d="M13 8l3 3"></path>
+      </symbol>
+      <symbol id="icon-monitor" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="12" rx="1.2"></rect>
+        <line x1="8" y1="20" x2="16" y2="20"></line>
+        <line x1="12" y1="16" x2="12" y2="20"></line>
+      </symbol>
+      <symbol id="icon-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="9" r="6"></circle>
+        <path d="M8.5 14.2 7 21l5-2.6L17 21l-1.5-6.8"></path>
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+        <path d="m3 7 9 6 9-6"></path>
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 2-2Z"></path>
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"></path>
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97V21H9z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============================================
+       SKIP LINK — accessibility: lets keyboard users
+       jump straight to the main content.
+  ============================================= -->
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <!-- ============================================
+       HEADER / NAVIGATION
+       Fixed top bar. On mobile, links collapse into
+       a hamburger menu (behaviour in js/script.js).
+  ============================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo-mark">JA<span class="logo-dot">.</span></a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home" class="nav-link active-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#certificates" class="nav-link">Certificates</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="assets/cv/Juma-Abedneco-CV.pdf" class="btn btn-ghost btn-small" download>Download CV</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================
+         HOME / HERO SECTION
+    ============================================= -->
+    <section class="hero" id="home">
+      <!-- decorative blueprint-grid background, purely visual -->
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+
+        <div class="hero-text">
+          <p class="hero-kicker">&gt; computer_science_student.init()</p>
+
+          <h1 class="hero-name">Juma Abedneco</h1>
+
+          <p class="hero-role">Computer Science Student <span class="role-divider">|</span> Aspiring Software Developer</p>
+
+          <p class="hero-summary">
+            I'm a Computer Science student at The Kitale National Polytechnic, passionate about
+            software development, web development, databases, and networking. I enjoy learning new
+            technologies and building practical solutions to real-world problems.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View my projects</a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div class="stat">
+              <dt>Programme</dt>
+              <dd>KNEC Diploma, IT&#8209;DCSL249</dd>
+            </div>
+            <div class="stat">
+              <dt>Status</dt>
+              <dd>Module III</dd>
+            </div>
+            <div class="stat">
+              <dt>Based in</dt>
+              <dd>Kenya</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <!-- Swap in your real photo: replace assets/images/profile.jpg -->
+            <img
+              src="assets/images/profile.jpg"
+              alt="Portrait of Juma Abedneco"
+              class="hero-photo"
+              id="hero-photo"
+              onerror="this.style.display='none'; document.getElementById('hero-photo-fallback').style.display='flex';"
+            >
+            <div class="hero-photo-fallback" id="hero-photo-fallback">
+              <span>JA</span>
+            </div>
+          </div>
+          <div class="hero-photo-tag">Kitale National Polytechnic</div>
+        </div>
+
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span class="scroll-cue-line"></span>
+      </a>
+    </section>
+
+    <!-- ============================================
+         ABOUT ME SECTION
+    ============================================= -->
+    <section id="about" class="about">
+      <div class="container about-inner">
+
+        <div class="about-text">
+          <p class="section-kicker">// about</p>
+          <h2 class="section-title">About Me</h2>
+
+          <p class="about-lead">
+            I'm Juma Abedneco, a Computer Science student at The Kitale National Polytechnic.
+            I'm drawn to how software, data, and networks fit together — from the code that
+            runs an application, to the database behind it, to the network that connects it
+            all — and I enjoy learning new technologies and building practical solutions to
+            real-world problems.
+          </p>
+
+          <p class="about-lead">
+            My interests span software development, web development, databases, and networking.
+            My goal is to grow into a skilled, reliable software developer who can take a
+            problem from idea to working solution.
+          </p>
+        </div>
+
+        <div class="about-do">
+          <h3 class="about-do-title">What I Do</h3>
+
+          <ul class="do-list">
+            <li class="do-item">
+              <span class="do-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
+              </span>
+              <div>
+                <p class="do-name">Programming</p>
+                <p class="do-desc">Writing clean, working code — mainly in Java — to solve practical problems.</p>
+              </div>
+            </li>
+
+            <li class="do-item">
+              <span class="do-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-browser"></use></svg>
+              </span>
+              <div>
+                <p class="do-name">Web Development</p>
+                <p class="do-desc">Building responsive websites and interfaces with HTML, CSS and JavaScript.</p>
+              </div>
+            </li>
+
+            <li class="do-item">
+              <span class="do-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-database"></use></svg>
+              </span>
+              <div>
+                <p class="do-name">Database Management</p>
+                <p class="do-desc">Designing and querying relational databases with MySQL and Microsoft Access.</p>
+              </div>
+            </li>
+
+            <li class="do-item">
+              <span class="do-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-network"></use></svg>
+              </span>
+              <div>
+                <p class="do-name">IT &amp; Networking</p>
+                <p class="do-desc">Setting up, maintaining and troubleshooting computer networks and hardware.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+    <!-- ============================================
+         SKILLS SECTION
+    ============================================= -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <p class="section-kicker">// skills</p>
+        <h2 class="section-title">Skills</h2>
+        <p class="skills-intro">Tools and technologies I've studied and worked with across my diploma so far.</p>
+
+        <div class="skills-grid">
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
+              </span>
+              <h3>Programming</h3>
+            </div>
+            <ul class="skill-badges">
+              <li class="skill-badge">Java</li>
+              <li class="skill-badge">VB.NET</li>
+              <li class="skill-badge">JavaScript</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-browser"></use></svg>
+              </span>
+              <h3>Web Development</h3>
+            </div>
+            <ul class="skill-badges">
+              <li class="skill-badge">HTML</li>
+              <li class="skill-badge">CSS</li>
+              <li class="skill-badge">JavaScript</li>
+              <li class="skill-badge">Responsive Web Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-database"></use></svg>
+              </span>
+              <h3>Databases</h3>
+            </div>
+            <ul class="skill-badges">
+              <li class="skill-badge">MySQL</li>
+              <li class="skill-badge">Microsoft Access</li>
+              <li class="skill-badge">SQL</li>
+              <li class="skill-badge">Database Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-network"></use></svg>
+              </span>
+              <h3>Networking &amp; IT</h3>
+            </div>
+            <ul class="skill-badges">
+              <li class="skill-badge">Computer Networking</li>
+              <li class="skill-badge">IP Addressing</li>
+              <li class="skill-badge">Network Troubleshooting</li>
+              <li class="skill-badge">Computer Hardware</li>
+            </ul>
+          </div>
+
+          <div class="skill-group skill-group-wide">
+            <div class="skill-group-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>
+              </span>
+              <h3>Tools</h3>
+            </div>
+            <ul class="skill-badges">
+              <li class="skill-badge">Visual Studio</li>
+              <li class="skill-badge">Eclipse</li>
+              <li class="skill-badge">XAMPP</li>
+              <li class="skill-badge">Microsoft Office</li>
+              <li class="skill-badge">Git/GitHub</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ============================================
+         PROJECTS SECTION
+    ============================================= -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <p class="section-kicker">// projects</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="skills-intro">Coursework and practice projects from my diploma, spanning desktop applications, databases, networking and the web.</p>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-monitor"></use></svg>
+              <span>Project image — add screenshot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Patient Information Management System</h3>
+              <p class="project-desc">A desktop application for managing patient records, appointments and basic clinic data, with a relational database handling storage behind a VB.NET interface.</p>
+              <ul class="tech-badges">
+                <li class="tech-badge">VB.NET</li>
+                <li class="tech-badge">Visual Studio</li>
+                <li class="tech-badge">Database</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Link to be added once hosted" onclick="return false;">View Project</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="GitHub repository link to be added" onclick="return false;">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-monitor"></use></svg>
+              <span>Project image — add screenshot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Pharmacy Information Management System</h3>
+              <p class="project-desc">A desktop application for managing pharmacy stock, sales and prescription records, built with VB.NET and backed by a relational database.</p>
+              <ul class="tech-badges">
+                <li class="tech-badge">VB.NET</li>
+                <li class="tech-badge">Visual Studio</li>
+                <li class="tech-badge">Database</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Link to be added once hosted" onclick="return false;">View Project</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="GitHub repository link to be added" onclick="return false;">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
+              <span>Project image — add screenshot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Java Programming Projects</h3>
+              <p class="project-desc">A collection of Java programs from coursework, including a student marks processor, a calculator, and exercises covering object-oriented programming, inheritance and methods.</p>
+              <ul class="tech-badges">
+                <li class="tech-badge">Java</li>
+                <li class="tech-badge">Eclipse</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Link to be added once hosted" onclick="return false;">View Project</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="GitHub repository link to be added" onclick="return false;">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-database"></use></svg>
+              <span>Project image — add screenshot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">MySQL Database Projects</h3>
+              <p class="project-desc">Practical database work covering relational design, tables and relationships, CRUD operations, and writing SQL queries to retrieve and manage data.</p>
+              <ul class="tech-badges">
+                <li class="tech-badge">MySQL</li>
+                <li class="tech-badge">SQL</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Link to be added once hosted" onclick="return false;">View Project</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="GitHub repository link to be added" onclick="return false;">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <div class="project-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-network"></use></svg>
+              <span>Project image — add screenshot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Network Setup &amp; Troubleshooting</h3>
+              <p class="project-desc">Hands-on networking practice including cable crimping with Cat5e/Cat6 and RJ45 connectors, cable testing, IP addressing, and diagnosing and resolving connectivity issues.</p>
+              <ul class="tech-badges">
+                <li class="tech-badge">Networking</li>
+                <li class="tech-badge">RJ45</li>
+                <li class="tech-badge">Cat5e/Cat6</li>
+                <li class="tech-badge">IP Addressing</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Link to be added once hosted" onclick="return false;">View Project</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="GitHub repository link to be added" onclick="return false;">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card">
+            <div class="project-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-browser"></use></svg>
+              <span>Project image — add screenshot</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Website Development</h3>
+              <p class="project-desc">Building websites end to end — design, development, testing, hosting and ongoing maintenance — using HTML, CSS and JavaScript.</p>
+              <ul class="tech-badges">
+                <li class="tech-badge">HTML</li>
+                <li class="tech-badge">CSS</li>
+                <li class="tech-badge">JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Link to be added once hosted" onclick="return false;">View Project</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="GitHub repository link to be added" onclick="return false;">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="projects-note">"View Project" and "GitHub" links will go live as each project is hosted and pushed to a repository.</p>
+      </div>
+    </section>
+    <!-- ============================================
+         EDUCATION SECTION
+    ============================================= -->
+    <section id="education" class="education">
+      <div class="container">
+        <p class="section-kicker">// education</p>
+        <h2 class="section-title">Education</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <h3 class="timeline-institution">The Kitale National Polytechnic</h3>
+
+              <dl class="timeline-meta">
+                <div class="meta-item">
+                  <dt>Programme</dt>
+                  <dd>Diploma in Computer Science</dd>
+                </div>
+                <div class="meta-item">
+                  <dt>Location</dt>
+                  <dd>Kenya</dd>
+                </div>
+                <div class="meta-item">
+                  <dt>Expected Completion</dt>
+                  <dd>7 April 2027</dd>
+                </div>
+              </dl>
+
+              <h4 class="timeline-subheading">Relevant Areas of Study</h4>
+              <ul class="area-tags">
+                <li class="area-tag">Programming</li>
+                <li class="area-tag">Database Management</li>
+                <li class="area-tag">Web Development</li>
+                <li class="area-tag">Computer Networking</li>
+                <li class="area-tag">Operating Systems</li>
+                <li class="area-tag">Computer Architecture</li>
+                <li class="area-tag">Information Systems</li>
+                <li class="area-tag">Computer Operations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ATTACHMENT / EXPERIENCE SECTION
+    ============================================= -->
+    <section id="experience" class="attachment">
+      <div class="container">
+        <p class="section-kicker">// experience</p>
+        <h2 class="section-title">Industrial Attachment</h2>
+        <p class="skills-intro">Practical, hands-on IT experience gained as part of my diploma programme, applying classroom learning in a real working environment.</p>
+
+        <div class="attachment-card">
+          <dl class="timeline-meta attachment-details">
+            <div class="meta-item">
+              <dt>Organization</dt>
+              <dd class="placeholder-value">[ADD ORGANIZATION]</dd>
+            </div>
+            <div class="meta-item">
+              <dt>Position</dt>
+              <dd>Computer Science Student / IT Trainee</dd>
+            </div>
+            <div class="meta-item">
+              <dt>Period</dt>
+              <dd class="placeholder-value">[ADD ATTACHMENT PERIOD]</dd>
+            </div>
+          </dl>
+
+          <h4 class="timeline-subheading">Areas of Practical Experience</h4>
+          <ul class="area-tags">
+            <li class="area-tag">Computer Hardware &amp; Troubleshooting</li>
+            <li class="area-tag">Operating System Configuration</li>
+            <li class="area-tag">Database Management</li>
+            <li class="area-tag">Programming</li>
+            <li class="area-tag">Website Development</li>
+            <li class="area-tag">Networking</li>
+            <li class="area-tag">Graphic Design</li>
+            <li class="area-tag">Computer Operations</li>
+            <li class="area-tag">Technical Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CERTIFICATES SECTION
+    ============================================= -->
+    <section id="certificates" class="certificates">
+      <div class="container">
+        <p class="section-kicker">// certificates</p>
+        <h2 class="section-title">Certificates</h2>
+        <p class="skills-intro">Certificates will be added soon. Each card below shows how a certificate will be presented once added.</p>
+
+        <div class="cert-grid">
+
+          <article class="cert-card">
+            <div class="cert-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-award"></use></svg>
+              <span>Certificate image / PDF</span>
+            </div>
+            <div class="cert-body">
+              <p class="cert-name placeholder-value">[Add certificate name]</p>
+              <dl class="cert-meta">
+                <div class="meta-item"><dt>Institution</dt><dd class="placeholder-value">[Add institution]</dd></div>
+                <div class="meta-item"><dt>Date</dt><dd class="placeholder-value">[Add date]</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Certificate file to be added" onclick="return false;">View Certificate</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="Verification link to be added" onclick="return false;">Verify</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cert-card">
+            <div class="cert-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-award"></use></svg>
+              <span>Certificate image / PDF</span>
+            </div>
+            <div class="cert-body">
+              <p class="cert-name placeholder-value">[Add certificate name]</p>
+              <dl class="cert-meta">
+                <div class="meta-item"><dt>Institution</dt><dd class="placeholder-value">[Add institution]</dd></div>
+                <div class="meta-item"><dt>Date</dt><dd class="placeholder-value">[Add date]</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Certificate file to be added" onclick="return false;">View Certificate</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="Verification link to be added" onclick="return false;">Verify</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cert-card">
+            <div class="cert-image">
+              <svg class="icon" aria-hidden="true"><use href="#icon-award"></use></svg>
+              <span>Certificate image / PDF</span>
+            </div>
+            <div class="cert-body">
+              <p class="cert-name placeholder-value">[Add certificate name]</p>
+              <dl class="cert-meta">
+                <div class="meta-item"><dt>Institution</dt><dd class="placeholder-value">[Add institution]</dd></div>
+                <div class="meta-item"><dt>Date</dt><dd class="placeholder-value">[Add date]</dd></div>
+              </dl>
+              <div class="project-actions">
+                <a href="#" class="btn btn-outline btn-small project-link" aria-disabled="true" title="Certificate file to be added" onclick="return false;">View Certificate</a>
+                <a href="#" class="btn btn-ghost btn-small project-link" aria-disabled="true" title="Verification link to be added" onclick="return false;">Verify</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+    ============================================= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <p class="section-kicker">// contact</p>
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <h3 class="contact-name">Juma Abedneco</h3>
+            <p class="contact-role">Computer Science Student | Aspiring Software Developer</p>
+
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+                </span>
+                <a href="mailto:abednecojuma39@gmail.com">abednecojuma39@gmail.com</a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
+                </span>
+                <span class="placeholder-value">[ADD PHONE IF I WANT TO DISPLAY IT]</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-github"></use></svg>
+                </span>
+                <span class="placeholder-value">[ADD GITHUB]</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg class="icon icon-solid" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                </span>
+                <span class="placeholder-value">[ADD LINKEDIN]</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">&copy; <span id="footer-year">2026</span> Juma Abedneco. Built with HTML, CSS &amp; JavaScript.</p>
+      <a href="#home" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
